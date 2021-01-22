@@ -139,7 +139,6 @@ class Reg1 extends Component {
                 isValid=false;
             }
         }
-        console.log(rules.uniqueCheck)
         if(rules.uniqueCheck)
         {
             let users=JSON.parse(localStorage.getItem('users'));
@@ -154,7 +153,7 @@ class Reg1 extends Component {
                     else{
                         this.setState({message:''});
                     }
-                    console.log('value '+value+' comparing with '+users[u].email)
+                    
                 }
             }
             

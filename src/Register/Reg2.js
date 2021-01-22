@@ -78,22 +78,14 @@ class Reg2 extends Component {
         Reg2Data: [],
         isFormValid: false,
     }
-    checkValidity = (value, rules) => {
-        let isValid = true;
-        if (rules.required) {
-            isValid = value.trim() !== '' && isValid;
-        }
-        if (rules.regex) {
-            isValid = rules.regex.test(value) && isValid;
-        }
-        if(rules.checkDate){
+    if(rules.checkDate){
             if(value && this.state.RegForm.startDate)
             {
-                if(value <= this.state.RegForm.startDate){
+                if(value < this.state.RegForm.startDate.value){
                     this.setState({message: 'End date should be greater than start date..'})
                 }
                 else{
-                    this.setState({message:''});
+                    this.setState({message:''})
                 }
 
             }
@@ -148,7 +140,6 @@ class Reg2 extends Component {
             //update userInfo
             let localUserInfo = JSON.parse(localStorage.getItem('userInfo'));
             if (localUserInfo) {
-                console.log(localUserInfo);
                 localUserInfo.push({ Reg1: Reg1, Reg2: Reg2 });
                 localStorage.setItem('userInfo', JSON.stringify(localUserInfo));
             } else {
