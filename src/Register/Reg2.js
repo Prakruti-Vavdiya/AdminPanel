@@ -78,6 +78,8 @@ class Reg2 extends Component {
         Reg2Data: [],
         isFormValid: false,
     }
+    checkValidity = (value, rules) => {
+    let isValid = true;
     if(rules.checkDate){
             if(value && this.state.RegForm.startDate)
             {
