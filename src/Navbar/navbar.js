@@ -11,6 +11,7 @@ class Navbar extends Component {
         
         let navButtons;
         let infoViewerButtons;
+        let changePasswordLink;
         if(this.props.login === true){
             navButtons = <LogOut logout={this.props.logOut}/>
             infoViewerButtons=(
@@ -19,6 +20,7 @@ class Navbar extends Component {
                     <NavLink to='/educationalDetails' className="btn">Educational Details</NavLink>
                 </span>
             );
+            changePasswordLink=<NavLink to='/changePassword' className="changePassword">Change Password</NavLink>
         }
         else{
             navButtons = <RegisterLogin/>
@@ -32,7 +34,7 @@ class Navbar extends Component {
                     <NavLink to='/' className='btn' style={{float:'right', marginTop:'11px'}}>Home</NavLink>
                     {infoViewerButtons}
                 </div>
-               
+               <span>{changePasswordLink}</span>
                <span className="loggedInAs">{this.props.loginMessage}</span>
             </nav>
         )

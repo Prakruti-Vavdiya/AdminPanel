@@ -32,3 +32,19 @@ table{
     border: 1px solid black;
     width:10%;
 }
+.greenButton{
+    color:white;
+    background-color: rgb(35, 173, 69);
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid rgb(10,140,40);
+    border-radius: 5px;
+}
+.redButton{
+    color:white;
+    background-color: rgb(255, 74, 74);
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid rgb(206, 70, 55);
+    border-radius: 5px;
+}

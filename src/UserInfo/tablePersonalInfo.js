@@ -3,9 +3,9 @@ import {NavLink} from 'react-router-dom';
 import './tablePersonalInfo.css';
 const TablePersonalInfo=()=>{
     let localUserInfo = JSON.parse(localStorage.getItem('userInfo'));
-    let table=localUserInfo.map(user => 
+    let table=localUserInfo.map((user,i) => 
         (
-            <MyAux>
+            <MyAux key={i}>
                 <tr> 
                     <td>{user.Reg1.firstname+" "+user.Reg1.lastname}</td>                
                     <td>{user.Reg1.gender}</td>

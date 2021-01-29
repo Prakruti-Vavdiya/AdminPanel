@@ -47,3 +47,15 @@ li{
 	top: 50px;
 	right: 10px;
 }
+.changePassword{
+	color: white;
+	position: absolute;
+	top: 70px;
+	right: 250px;
+	font-size: larger;
+	font-weight: 700;
+}
+.changePassword:hover{
+	color: #ddd;
+	text-decoration:underline;
+}

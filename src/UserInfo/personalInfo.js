@@ -4,7 +4,7 @@ const PersonalInfo=()=>{
     let localUserInfo = JSON.parse(localStorage.getItem('userInfo'));
     let table=localUserInfo.map(user => 
         (
-            <table>
+            <table key={new Date()}>
                 <tr>
                     <th>Name:</th>
                     <td>{user.Reg1.firstname+" "+user.Reg1.lastname}</td>
