@@ -88,6 +88,8 @@ class Reg1 extends Component {
                 value: '',
                 validation: {
                     required: true,
+                    regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+                    strongPasswordCheck:true
                 },
                 valid: false,
                 touched: false
@@ -131,6 +133,13 @@ class Reg1 extends Component {
         }
         if (rules.regex) {
             isValid = rules.regex.test(value) && isValid;
+        }
+        if(rules.strongPasswordCheck)
+        {
+            if(!isValid) 
+                this.setState({message:'Password should contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number'});
+            else
+                this.setState({message:''})
         }
         if(rules.passwordCheck)
         {   let confirmPassword=value;

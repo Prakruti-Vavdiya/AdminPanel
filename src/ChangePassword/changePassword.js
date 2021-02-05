@@ -27,6 +27,7 @@ class changePassword extends Component {
                 value: '',
                 validation: {
                     required: true,
+                    regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
                 },
                 valid: false,
                 touched: false
@@ -86,6 +87,9 @@ class changePassword extends Component {
         if (rules.required) {
             isValid = value.trim() !== '' && isValid;
         }
+        if (rules.regex) {
+            isValid = rules.regex.test(value) && isValid;
+        }
         return isValid;
     }
 
@@ -138,6 +142,7 @@ class changePassword extends Component {
                             changed={(event) => this.inputChangeHandler(event, element.id)} />
                     ))
                 }
+                <p style={{color:'grey'}}>* Password should contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number</p>
                 <button className='Login-btn' onClick={this.dataHandler} disabled={!this.state.IsFormValid}>Confirm</button>
                 <div style={{color:'red'}}>{this.state.message}</div>
                 <div className='Login-links'>
